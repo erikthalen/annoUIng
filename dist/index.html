@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+  <head>
+    <title>annoUIng</title>
+    <link rel="stylesheet" href="demo-styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        anno<span class="red">UI</span>ng<br> homepage
+      </h1>
+      <h6>A DARK PATTERN UI LIBRARY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V1.0.0</h6>
+    </div>
+
+    <div class="cards blue">
+      <h3>This is for you who want your consumers to:</h3>
+      <div class="card">
+        <div>
+          <div class="img">🙋‍♂️</div>
+          <div><p>Do what <i>you</i> want</p></div>
+        </div>
+        <p>&rarr;</p>
+        <div>
+          <div class="img">💁‍♂️</div>
+          <div><p><i>Do</i> what you want</p></div>
+        </div>
+        <p>&rarr;</p>
+        <div>
+          <div class="img">🤷‍♂️</div>
+          <div><p>Do what you <i>want</i></p></div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="">HOW TO?</h1>
+    <p>
+      <b>— Download the .js-file and include it in your site<br>
+        — Look down under what you want, and what HTML class to init with.</b>
+    </p>
+    <p>The library doesn't include visable styling, so style your elements however you like.</p>
+    <p>Should work for all kinds of elements, as long as you put the right <code>class</code> on it.</p>
+    <p>No dependencies.</p>
+
+    <h1>INCLUDING:</h1>
+
+    <div class="section">
+      <h2>Magnetized elements:</h2>
+      <p>When the cursor is close. The element is drawn to it.</p>
+      <div class="code-block">
+        <code>&ltbutton class="annouing magnet"&gtSign up&lt/button&gt</code>
+      </div>
+      <button class="green-button annouing magnet">Sign up</button>
+    </div>
+
+    <div class="section">
+      <h2>Fading elements:</h2>
+      <p>When the cursor is closing in. The element fades out.</p>
+      <div class="code-block">
+        <code>&lta href="#" class="annouing fade"&gtCancel subscription&lt/a&gt</code>
+      </div>
+      <a href="#" class="grey-button annouing fade">Cancel subscription</a>
+    </div>
+
+    <div class="section">
+      <h2>Growing elements:</h2>
+      <p>When the element is in viewport. The element grows. Otherwise, goes back to normal.</p>
+      <div class="code-block">
+        <code>&ltbutton class="annouing grow"&gtBUY NOW&lt/button&gt</code>
+      </div>
+      <button class="red-button annouing grow">BUY NOW</button>
+    </div>
+
+    <div class="section">
+      <h2>Non closing elements:</h2>
+      <p>When the cursor is close, the element moves away. Put the sensible element inside a container. The element will be put in the top corner and the container will be what moves around.</p>
+      <div class="code-block">
+        <code>
+          &ltdiv&gt (this will move)<br>
+            &nbsp;&nbsp;&ltbutton class="annouing avoid"&gt<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&#x274C;<br>
+            &nbsp;&nbsp;&ltbutton&gt<br>
+            &nbsp;&nbsp;[POPUP CONTENT]<br>
+          &lt/div&gt
+        </code>
+      </div>
+      <div class="popup">
+        <button class="close-button annouing avoid">
+          &#x274C;
+        </button>
+        <div class="popup-content">
+          <h1>📬</h1>
+          <h2>Sign up for a newsletter</h2>
+          <h4>We will send one very often</h4>
+          <input type="text" placeholder="EMAIL:">
+          <input type="submit">
+          <h1>✉️</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>A fly on the screen:</h2>
+      <p>For touch screens. Changes direction when it appears in the viewport. Walks around inside the element that has the class</p>
+      <div class="code-block">
+        <code>
+          &ltdiv class="annouing fly"&gt (will walk around in here)<br>
+            &nbsp;&nbsp;&lta href="#"&gtGo check out this thing on this website!&lt/a&gt<br>
+          &lt/div&gt
+        </code>
+      </div>
+      <div class="with-fly annouing fly">
+        <h1 class="">Go check out this thing on this website!</h1>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Text changes:</h2>
+      <p>The text in the element gradually changes as the cursor comes near. Put the text you want to swap to in the <code>data-swap</code> attribute</p>
+      <div class="code-block">
+        <code>
+          &ltbutton class="annouing swap" data-swap="Submit"&gt<br>
+            &nbsp;&nbsp;Cancel<br>
+          &lt/button&gt
+        </code>
+      </div>
+      <button class="swap-button annouing swap" data-swap="Submit">Cancel</button>
+    </div>
+
+    <div class="section">
+      <h2>Nested dropdowns: <span class="gray">( in progress )</span></h2>
+      <div></div>
+    </div>
+
+    <!--
+
+    <div class="performance-testing">
+      <h1>Performance testing:</h1>
+      <div class="buttons">
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="green annouing magnet">Sign up</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <button class="red-button annouing grow">BUY NOW</button>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+        <div class="with-fly annouing fly">
+          <h1 class="">Go check out this thing on this website!</h1>
+        </div>
+      </div>
+    </div>
+
+    -->
+
+    <div class="section footer">
+      <h1>Thanks. But no thanks.</h1>
+      <h3>
+        ╰(
+        <span class="blue"> ͡°</span>
+        <span class="red"> ͜</span>
+        ʖ
+        <span class="blue"> ͡°</span> )つ──<span class="green">☆</span>
+        <span class="yellow">*:・ﾟ</span> More to come</h3>
+    </div>
+
+    <script src="./annouing.min.js"></script>
+  </body>
+</html>
