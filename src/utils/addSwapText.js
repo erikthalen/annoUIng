@@ -1,21 +1,26 @@
+const wrapText = (text) => {
+  const container = document.createElement('SPAN')
+  const textNode = document.createTextNode(text)
+  
+  container.appendChild(textNode)
+
+  return container
+}
+
 export default element => {
-  const swapTo = element.dataset.swap, // What's in the data-attr
-    swapToContainer = document.createElement('SPAN'), // To put new text in
-    swapToAsNode = document.createTextNode(swapTo), // The new text
-    originalText = element.firstChild, // The text in the button
-    originalTextContainer = document.createElement('SPAN'), // To wrap original text
-    originalTextAsNode = document.createTextNode(originalText.nodeValue)
+  const swapTo = element.dataset.swap,
+    originalText = element.firstChild,
+    swapWraped = wrapText(swapTo),
+    originalWraped = wrapText(originalText.nodeValue)
 
-  originalTextContainer.appendChild(originalTextAsNode); // Put original text in span
-  element.replaceChild(originalTextContainer, originalText); // Replace original text with span wraped text
-  swapToContainer.appendChild(swapToAsNode) // Append new text as well
-  element.appendChild(swapToContainer) // And put into button
+  element.replaceChild(originalWraped, originalText)
+  element.appendChild(swapWraped)
 
-  Object.assign(originalTextContainer.style, {
-    transition: 'all 4.7s cubic-bezier(0.075, 0.82, 0.165, 1)'
+  Object.assign(originalWraped.style, {
+    transition: 'all 3s cubic-bezier(0.075, 0.82, 0.165, 1)'
   })
 
-  Object.assign(swapToContainer.style, {
+  Object.assign(swapWraped.style, {
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -23,7 +28,7 @@ export default element => {
     opacity: '0',
     textAlign: 'center',
     cursorEvents: 'none',
-    transition: 'all 4.7s cubic-bezier(0.075, 0.82, 0.165, 1)'
+    transition: 'all 3s cubic-bezier(0.075, 0.82, 0.165, 1)'
   })
 
   return element

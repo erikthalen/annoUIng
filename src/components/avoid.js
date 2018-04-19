@@ -1,32 +1,27 @@
 import addArea from './../utils/addArea'
-import fromMiddle from './../utils/fromMiddle'
+import fromMiddlePixels from './../utils/fromMiddlePixels'
+import moveOpposite from './../utils/moveOpposite'
 import putInCorner from './../utils/putInCorner'
 
-const avoid = (element, e) => {
-  const a = element.parentElement, // Parent === area
-    popUp = element.parentNode.parentNode,
-    offset = fromMiddle(a, e),
-    areaBorderX = offset.width / 2,
-    areaBorderY = offset.height / 2,
-    maxX = offset.x > 0 // If cursor is inside to the left
-      ? areaBorderX + 20 // Move to the right
-      : -areaBorderX - 20, // Else to the left
-    maxY = offset.y > 0
-      ? areaBorderY + 20
-      : -areaBorderY - 20
+const avoid = (element, mouseEvent) => {
+  const area = element.parentElement, // Parent === area
+    container = element.parentNode.parentNode,
+    radius = fromMiddlePixels(area, mouseEvent),
+    maxX = moveOpposite(radius.x, radius.xBorder),
+    maxY = moveOpposite(radius.y, radius.yBorder)
 
-  Object.assign(popUp.style, {
+  Object.assign(container.style, {
     zIndex: "1001",
     transform: `translate(
       ${-maxX}px,
-      ${-maxY / 2.5}px)`,
+      ${-maxY}px)`,
     transition: 'all 2.8s cubic-bezier(0.4, 1.4, 1, 1)'
   })
 
   return element
 }
 
-const addAvoid = element =>
+const addEvents = element =>
   element.parentElement.addEventListener(
     "mousemove",
     avoid.bind(null, element),
@@ -34,10 +29,10 @@ const addAvoid = element =>
   )
 
 export default init => init
-  .map(element => {
-    return addAvoid(
+  .map(element =>
+    addEvents(
       putInCorner(
         addArea(element), 10
       )
     )
-  })
+  )

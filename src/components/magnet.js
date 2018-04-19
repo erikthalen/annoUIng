@@ -1,17 +1,15 @@
 import addArea from './../utils/addArea'
-import fromMiddle from './../utils/fromMiddle'
+import fromMiddlePixels from './../utils/fromMiddlePixels'
 import moveAround from './../utils/moveAround'
 import resetTransform from './../utils/resetTransform'
 
-const mover = (element, e) => {
-  const a = element.parentElement, // Parent === area
-    offset = fromMiddle(a, e),
-    areaBorderX = offset.width / 2,
-    areaBorderY = offset.height / 2,
-    maxX = moveAround(offset.x, areaBorderX),
-    maxY = moveAround(offset.y, areaBorderY)
+const mover = (element, mouseEvent) => {
+  const area = element.parentElement, // Parent === area
+    radius = fromMiddlePixels(area, mouseEvent),
+    maxX = moveAround(radius.x, radius.xBorder),
+    maxY = moveAround(radius.y, radius.yBorder)
 
-  Object.assign(a.style, {
+  Object.assign(area.style, {
     position: "relative",
     zIndex: "1000"
   })
@@ -22,7 +20,7 @@ const mover = (element, e) => {
     transform: `translate(
       ${maxX / 2}px,
       ${maxY / 5}px)
-      scale(0.5, 0.2)`,
+      scale(0.5, 0.5)`,
     transition: 'all .7s cubic-bezier(0.4, 1.4, 1, 1)'
   })
 

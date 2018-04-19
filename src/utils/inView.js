@@ -1,5 +1,5 @@
 export default element => {
-  const rect = element.getBoundingClientRect();
+  const rect = element.getBoundingClientRect()
 
   return (
     (rect.top >= 0 &&
@@ -8,5 +8,5 @@ export default element => {
     (rect.bottom >= 0 &&
       rect.bottom <=
       (window.innerHeight || document.documentElement.clientHeight))
-  );
-};
+  )
+}

@@ -1,12 +1,12 @@
 import addArea from './../utils/addArea'
-import fromMiddle from './../utils/fromMiddle'
-import furthestOfXY from './../utils/furthestOfXY'
+import fromMiddlePixels from './../utils/fromMiddlePixels'
+import fromMiddlePercent from './../utils/fromMiddlePercent'
 import resetOpacity from './../utils/resetOpacity'
 
-const fade = (element, e) => {
-  const a = element.parentElement, // Parent === area
-    offset = fromMiddle(a, e),
-    percentFromMiddle = furthestOfXY(offset)
+const fade = (element, mouseEvent) => {
+  const area = element.parentElement,
+    mousePos = fromMiddlePixels(area, mouseEvent),
+    percentFromMiddle = fromMiddlePercent(mousePos.x, mousePos.y, mousePos.xBorder)
 
   Object.assign(element.style, {
     opacity: percentFromMiddle / 100,

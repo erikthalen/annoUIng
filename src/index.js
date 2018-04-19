@@ -10,7 +10,6 @@ import {initFly, moveFly} from './components/fly'
 import swap from './components/swap'
 
 // Run init
-
 const elementsInUse = {
   magnet: magnet(elements.magnet),
   fade: fade(elements.fade),
@@ -20,7 +19,9 @@ const elementsInUse = {
 }
 
 const dispatchScroll = () => {
+
   grow(elements.grow)
+
   elementsInUse.flies.map(fly => moveFly(fly.img))
-};
-window.addEventListener("scroll", dispatchScroll, true);
+}
+window.addEventListener("scroll", dispatchScroll, true)

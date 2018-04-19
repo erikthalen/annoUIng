@@ -1,12 +1,14 @@
 import addImage from './../utils/addImage'
 import flyImg from './../utils/flyImg'
-import fromMiddle from './../utils/fromMiddle'
+import fromMiddlePixels from './../utils/fromMiddlePixels'
 import inView from './../utils/inView'
 import randomNumber from './../utils/randomNumber'
 
 export const moveFly = fly => {
-  const rect = fromMiddle(fly.parentElement, 0)
-  const random = randomNumber(rect)
+  const rect = fromMiddlePixels(fly.parentElement, 0)
+  const fullWidth = rect.xBorder * 2
+  const fullHeight = rect.yBorder * 2
+  const random = randomNumber(fullWidth, fullHeight)
 
   if (inView(fly) && !fly.classList.contains("moving")) {
     fly.classList.add("moving")

@@ -1,12 +1,12 @@
 import addArea from './../utils/addArea'
 import addSwapText from './../utils/addSwapText'
-import fromMiddle from './../utils/fromMiddle'
-import furthestOfXY from './../utils/furthestOfXY'
+import fromMiddlePixels from './../utils/fromMiddlePixels'
+import fromMiddlePercent from './../utils/fromMiddlePercent'
 import resetOpacity from './../utils/resetOpacity'
 
-const textSwap = (element, e) => {
-  const offset = fromMiddle(element.parentElement, e),
-    percentFromMiddle = furthestOfXY(offset),
+const textSwap = (element, mouseEvent) => {
+  const mousePos = fromMiddlePixels(element.parentElement, mouseEvent),
+    percentFromMiddle = fromMiddlePercent(mousePos.x, mousePos.y, mousePos.xBorder),
     opacity = percentFromMiddle / 100
 
   Object.assign(element.firstChild.style, {
